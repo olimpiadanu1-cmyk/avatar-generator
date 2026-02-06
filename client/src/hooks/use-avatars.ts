@@ -1,5 +1,6 @@
 import { useQuery, useMutation } from "@tanstack/react-query";
-import { api, type InsertAvatar } from "@shared/routes";
+import { api } from "@shared/routes";
+import { type InsertAvatar } from "@shared/schema";
 
 export function useAvatars() {
   // Although not strictly needed for the canvas generator if it's purely client-side,
@@ -17,11 +18,11 @@ export function useCreateAvatar() {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(data),
       });
-      
+
       if (!res.ok) {
         throw new Error("Failed to save avatar generation stats");
       }
-      
+
       return api.avatars.create.responses[201].parse(await res.json());
     }
   });
@@ -35,10 +36,9 @@ export function useStyles() {
       // For now, we mock the styles based on requirements to ensure the UI works immediately
       // without needing the backend file system scanned perfectly first.
       return [
-        { id: "style_red", name: "Crimson Rage", url: "/images/styles/style_red.png", color: "hsl(0 100% 50%)" },
-        { id: "style_blue", name: "Cyber Blue", url: "/images/styles/style_blue.png", color: "hsl(210 100% 50%)" },
-        { id: "style_green", name: "Toxic Venom", url: "/images/styles/style_green.png", color: "hsl(140 100% 50%)" },
-        { id: "style_purple", name: "Void Walker", url: "/images/styles/style_purple.png", color: "hsl(270 100% 50%)" },
+        { id: "style_1", name: "Style 1", url: "/images/styles/1style.png", color: "hsl(0 100% 50%)" },
+        { id: "style_2", name: "Style 2", url: "/images/styles/2style.png", color: "hsl(210 100% 50%)" },
+        { id: "style_3", name: "Style 3", url: "/images/styles/3style.png", color: "hsl(300 100% 50%)" },
       ];
     },
   });
