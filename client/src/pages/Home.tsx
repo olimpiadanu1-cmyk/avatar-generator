@@ -1001,12 +1001,12 @@ export default function Home() {
                     onCanvasReady={setCanvasRef}
                   />
 
-                  {/* Desktop Download Action */}
-                  <div className="absolute -bottom-20 left-1/2 -translate-x-1/2 hidden lg:flex gap-4">
+                  {/* Download Action */}
+                  <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mt-8 lg:mt-0 lg:absolute lg:-bottom-24 lg:left-1/2 lg:-translate-x-1/2 w-full lg:w-max">
                     <Button
                       onClick={handleDownload}
                       size="lg"
-                      className="h-16 px-10 text-xl font-display uppercase tracking-widest bg-primary hover:bg-primary/90 shadow-[0_0_30px_-5px_hsl(var(--primary)/0.6)] clip-gaming transition-transform hover:scale-105 active:scale-95 border-2 border-white/10"
+                      className="w-full sm:w-auto h-16 px-10 text-xl font-display uppercase tracking-widest bg-primary hover:bg-primary/90 shadow-[0_0_30px_-5px_hsl(var(--primary)/0.6)] clip-gaming transition-transform hover:scale-105 active:scale-95 border-2 border-white/10"
                     >
                       <Download className="mr-3 w-6 h-6" /> Скачать
                     </Button>
